@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+ /**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */ 
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+   <menu>
+      <add id="Ests_Main::modules" title="MODULE" module="Ests_Main" sortOrder="70" resource="Ests_Main::modules" />
+      <add id="Ests_FWshare::fwshare" title="Facebook And WhatsApp Share Product" module="Ests_FWshare" 
+           sortOrder="30" parent="Ests_Main::modules" resource="Ests_FWshare::fwshare" />
+      <add id="Ests_FWshare::configuration" title="Settings" module="Ests_FWshare" sortOrder="20" 
+           parent="Ests_FWshare::fwshare" action="adminhtml/system_config/edit/section/fwshare_section" 
+           resource="Ests_FWshare::configuration" />
+   </menu>
+</config>

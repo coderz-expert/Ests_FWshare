@@ -1,0 +1,30 @@
+{
+    "name": "ests/fwshare",
+    "description": "This extension will Show CountDown timer for the  product .",
+    "type": "magento2-module",
+    "version": "2.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~5.5.0|~5.5.38|~5.6.0|~5.6.36|~7.0.0|~7.0.2|~7.0.3|~7.0.4|~7.0.6|~7.1.0|~7.1.1|~7.2.0|~7.3.0|~7.4.0|~8.0.0|~8.1.0|~8.1.1"
+         },
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Expound Soft Tech Solution",
+            "email": "contact@expoundsofttechsolution.com",
+            "homepage": "http://www.expoundsofttechsolution.com/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ests\\FWshare\\": ""
+        }
+    }
+}

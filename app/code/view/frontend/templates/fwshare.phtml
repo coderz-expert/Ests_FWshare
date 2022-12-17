@@ -1,0 +1,101 @@
+<?php
+/**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */
+$_product = $block->_coreRegistry->registry("current_product");
+$storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get("Magento\Catalog\Model\Product")
+           ->load($_product->getId());
+?>
+<style>
+a.wa_btn.wa_btn_l {
+    border: 1px solid #25d366;
+    background: #25d366;
+    color: #fff;
+    padding: 5px 10px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+</style>
+
+<?php if ($block->_scopeConfigInterface->getValue("fwshare_section/general_group/whatsapp_active", $storeScope)
+): ?>
+    <?php
+    $jsurl = $block->getViewFileUrl("Ests_FWshare::js/button.js");
+
+    $productdata =
+        "Take a look at this Wonderful Product:<br/>
+    &nbsp;<br/>
+    Product Name: " .
+        $_product->getName() .
+        "<br/>
+    &nbsp;<br/>
+    Product Price:" .
+        round($_product->getPrice(), 2) .
+        "<br/>
+    &nbsp;<br/>
+    Product short description:" .
+        $_product->getShortDescription() .
+        "<br/>
+    &nbsp;<br/>
+    More Information:";
+    $indent = str_replace("<br/>", " ", $productdata);
+    $indent1 = str_replace("&nbsp;", " ", $indent);
+    ?>
+    
+    <script type="">
+        if(typeof wabtn4fg==="undefined")
+            {wabtn4fg=1;h=document.head||document.getElementsByTagName("head")[0],
+            s=document.createElement("script");s.type="";
+            s.src="<?= /* @noEscape */ $jsurl; ?>";h.appendChild(s);
+                
+            }
+    </script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <a href="https://api.whatsapp.com/send?text="
+        data-text="<?= /* @noEscape */ $indent1; ?>" 
+        data-href="<?= /* @noEscape */ $_product->getProductUrl(); ?>"
+        data-action="share/whatsapp/share"
+        class="wa_btn wa_btn_<?= /* @noEscape */  $block->_scopeConfigInterface->getValue(
+            "fwshare_section/general_group/whatsapp_size",
+        $storeScope ); ?>" 
+        ">
+    
+        <?php $block->_scopeConfigInterface->getValue(
+            "fwshare_section/general_group/whatsapp_active",
+            $storeScope
+        ); ?>
+    Share 
+    </a>
+ 
+<?php endif; ?>
+
+<?php if ($block->_scopeConfigInterface->getValue(
+    "fwshare_section/general_group/fb_active",
+    $storeScope
+)
+): ?>
+    <div id="fb-root"></div>
+    
+    <script>(function(d, s, id)
+        {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=<?= /* @noEscape */ $block->_scopeConfigInterface
+            ->getValue('fwshare_section/general_group/fb_id',$storeScope)?>";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+        (document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="fb-share-button" 
+        data-href="<?= /* @noEscape */ $_product->getProductUrl(); ?>" 
+        data-layout="<?= /* @noEscape */ $block->_scopeConfigInterface->getValue(
+            "fwshare_section/general_group/fb_layout",
+                $storeScope);?>">
+    </div>
+<?php endif; ?>

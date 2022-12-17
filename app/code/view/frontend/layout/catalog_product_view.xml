@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+ <!--
+ /**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */ 
+  -->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+ 
+    <body>
+        <referenceContainer name="product.info.extrahint">
+         <block class="Ests\FWshare\Block\FWshare" name="expert_fwshare" as="expert_fwshare" template="fwshare.phtml"/>  
+          
+                   </referenceContainer>
+    </body>
+</page>

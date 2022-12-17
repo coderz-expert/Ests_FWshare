@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ <!--
+ /**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */ 
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    <module name="Ests_FWshare" setup_version="1.0.0" schema_version="1.0.0">
+    </module>
+</config>

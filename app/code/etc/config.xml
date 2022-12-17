@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+ <!--
+ /**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */ 
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+  <default>
+    <fwshare_section>
+      <general_group>
+        <fb_active>1</fb_active>
+        <fb_layout>button_count</fb_layout>
+        <whatsapp_active>1</whatsapp_active>
+        <whatsapp_size>l</whatsapp_size>
+        <whatsapp_text>Share on WhatsApp</whatsapp_text>       
+      </general_group>    
+    </fwshare_section>
+  </default>
+</config>

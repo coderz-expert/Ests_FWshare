@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+ /**  
+  * @category    Ests
+  * @package     Ests_FWshare
+  * @author      ESTS Team
+  * @Copyright:  Copyright (c) 2022 ESTS<expoundsofttechsolution.com>
+  */ 
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+   <system>
+      <tab id="eststab" translate="label" sortOrder="400">
+         <label>Ests</label>
+      </tab>
+      <section id="fwshare_section" translate="label" type="text" sortOrder="300" showInDefault="1" 
+               showInWebsite="1" showInStore="1">
+         <class>separator-top</class>
+         <label>Share Product Facebook And WhatsApp Setting</label>
+         <tab>eststab</tab>
+         <resource>Ests_FWshare::config_fwshare</resource>
+         <group id="general_group" translate="label" type="text" sortOrder="5" showInDefault="1" 
+                showInWebsite="1" showInStore="1">
+            <label>General</label>
+            <field id="fb_heading" translate="label comment" type="select" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="4">
+               <label>Facebook Setting</label>
+               <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+            </field>
+            <field id="fb_active" translate="label comment" type="select" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="5">
+               <label>Facebook Active</label>
+               <comment>You can Enable or Disable module</comment>
+               <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="fb_id" translate="label comment" type="text" showInDefault="1" showInWebsite="1" 
+                   showInStore="1" sortOrder="7">
+               <label>Facebook App Id</label>
+               <comment>Please create App Id</comment>
+            </field>
+            <field id="fb_layout" translate="label comment" type="select" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="10">
+               <label>Facebook Layout</label>
+               <comment>You can Enable or Disable Js popup</comment>
+               <source_model>Ests\FWshare\Model\Config\Source\Fblayout</source_model>
+            </field>
+            <field id="whatsapp_heading" translate="label comment" type="select" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="11">
+               <label>WhatsApp Setting</label>
+               <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+            </field>
+            <field id="whatsapp_active" translate="label comment" type="select" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="15">
+               <label>Enable</label>
+               <comment>Whatsapp Active</comment>
+               <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="whatsapp_size" translate="label comment" type="select" showInDefault="1" 
+                  showInWebsite="1" showInStore="1" sortOrder="20">
+               <label>Whatsapp Size</label>
+               <depends>
+                  <field id="enable_field">1</field>
+               </depends>
+               <source_model>Ests\FWshare\Model\Config\Source\Wasize</source_model>
+            </field>
+            <field id="whatsapp_text" translate="label comment" type="text" showInDefault="1" 
+                   showInWebsite="1" showInStore="1" sortOrder="25">
+               <label>Whatsapp text</label>
+               <comment>You can add Whatsapp Text button</comment>
+            </field>
+         </group>
+      </section>
+   </system>
+</config>
